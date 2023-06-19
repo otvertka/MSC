@@ -3,7 +3,7 @@ import Expenses from "./components/Expenses/Expenses";
 import React from "react";
 // import Products from "./components/Products";
 
-const App = () => {
+function App() {
   const expenses = [
     {
       id: "e1",
@@ -38,6 +38,6 @@ const App = () => {
   //     <Expenses items={expenses} />
   //   </div>
   // );
-};
+}
 
 export default App;
