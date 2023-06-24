@@ -4,11 +4,11 @@ import ExpenseDate from "./ExpenseDate";
 import "./ExpenseItem.css";
 
 const ExpenseItem = (props) => {
-  const [title, setTitle] = useState(props.title);
-  console.log("ExpenseItem evaluated by React");
+  let [title, setTitle] = useState(0);
 
   const clickHandler = () => {
-    setTitle("Обновили!");
+    setTitle(++title);
+    console.log(title);
   };
   return (
     //

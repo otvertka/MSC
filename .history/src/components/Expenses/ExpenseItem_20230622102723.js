@@ -5,10 +5,10 @@ import "./ExpenseItem.css";
 
 const ExpenseItem = (props) => {
   const [title, setTitle] = useState(props.title);
-  console.log("ExpenseItem evaluated by React");
 
   const clickHandler = () => {
     setTitle("Обновили!");
+    console.log(title);
   };
   return (
     //
