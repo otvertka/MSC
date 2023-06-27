@@ -2,9 +2,7 @@
 import Expenses from "./components/Expenses/Expenses";
 import React from "react";
 import NewExpense from "./components/NewExpense/NewExpense";
-
 // import Products from "./components/Products";
-import Header from "./components/Header.js";
 
 const App = () => {
   const expenses = [
@@ -44,3 +42,19 @@ const App = () => {
 };
 
 export default App;
+
+var searchArray = function (arrayToSearch, query) {
+  for (let i = 0; i < arrayToSearch.length; i++) {
+    console.log(arrayToSearch[i]);
+  }
+};
+searchArray([
+  [1, 2],
+  [3, 4],
+  [5, 6],
+]);
+
+// var arrayToSearch = [[1,2],[3,4],[5,6]];
+// var query = [1,2]; // => 0
+// query = [5,6]; // => 2
+// query = [9,2]; // => -1

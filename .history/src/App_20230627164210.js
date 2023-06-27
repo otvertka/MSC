@@ -2,9 +2,7 @@
 import Expenses from "./components/Expenses/Expenses";
 import React from "react";
 import NewExpense from "./components/NewExpense/NewExpense";
-
 // import Products from "./components/Products";
-import Header from "./components/Header.js";
 
 const App = () => {
   const expenses = [
@@ -36,6 +34,7 @@ const App = () => {
 
   return (
     <div>
+      <Header />
       <h2>Let's get started!</h2>
       <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses items={expenses} />
