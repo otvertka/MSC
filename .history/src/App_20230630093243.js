@@ -31,8 +31,7 @@ const App = () => {
   const addExpenseHandler = (expense) => {
     setExpenses((prevExpenses) => {
       return [expense, ...prevExpenses];
-    });
-    // setExpenses([expense, ...expenses]);
+    }); // добавляем первым элементом наш Новый элемент, и все остальные
   };
 
   return (

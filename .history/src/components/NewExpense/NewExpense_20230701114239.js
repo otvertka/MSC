@@ -10,9 +10,13 @@ const NewExpense = (props) => {
     event.target.className = "hide";
   };
 
-  const stopEditingHandler = () => {
-    setIsEditing(false);
-  };
+  // if (isVisible === false) {
+  //   return (
+  //     <div>
+  //       <button onClick={startEditingHandler}>Add new Expense</button>
+  //     </div>
+  //   );
+  // }
 
   const saveExpenseDataHandler = (enteredExpenseData) => {
     const expenseData = {
@@ -20,7 +24,6 @@ const NewExpense = (props) => {
       id: Math.random().toString(),
     };
     props.onAddExpense(expenseData);
-    setIsEditing(false);
   };
 
   return (
@@ -30,12 +33,7 @@ const NewExpense = (props) => {
           Add new Expense
         </button>
       )}
-      {isEditing && (
-        <ExpenseForm
-          onSaveExpenseData={saveExpenseDataHandler}
-          onCancel={stopEditingHandler}
-        />
-      )}
+      {isEditing && <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />}
     </div>
   );
 };

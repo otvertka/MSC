@@ -3,16 +3,19 @@ import ExpenseForm from "./ExpenseForm";
 import "./NewExpense.css";
 
 const NewExpense = (props) => {
-  const [isEditing, setIsEditing] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
-  const startEditingHandler = (event) => {
-    setIsEditing(!isEditing);
-    event.target.className = "hide";
+  const toggleVisibility = () => {
+    setIsVisible(!isVisible);
   };
 
-  const stopEditingHandler = () => {
-    setIsEditing(false);
-  };
+  // if (isVisible === false) {
+  //   return (
+  //     <div>
+  //       <button onClick={toggleVisibility}>Add new Expense</button>
+  //     </div>
+  //   );
+  // }
 
   const saveExpenseDataHandler = (enteredExpenseData) => {
     const expenseData = {
@@ -20,20 +23,15 @@ const NewExpense = (props) => {
       id: Math.random().toString(),
     };
     props.onAddExpense(expenseData);
-    setIsEditing(false);
   };
 
   return (
     <div className="new-expense">
-      {!isEditing && (
-        <button className="" onClick={startEditingHandler}>
-          Add new Expense
-        </button>
-      )}
-      {isEditing && (
+      <button onClick={toggleVisibility}>Add new Expense</button>
+      {isVisible && (
         <ExpenseForm
           onSaveExpenseData={saveExpenseDataHandler}
-          onCancel={stopEditingHandler}
+          onClick={toggleVisibility}
         />
       )}
     </div>

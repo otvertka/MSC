@@ -29,10 +29,10 @@ const App = () => {
   const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
 
   const addExpenseHandler = (expense) => {
-    setExpenses((prevExpenses) => {
-      return [expense, ...prevExpenses];
-    });
-    // setExpenses([expense, ...expenses]);
+    // setExpenses((prevExpenses) => {
+    //   return [expense, ...prevExpenses];
+    // });
+    setExpenses([expense, ...expenses]);
   };
 
   return (
